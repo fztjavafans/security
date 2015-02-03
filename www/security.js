@@ -5,7 +5,7 @@ module.exports = {
 		exec(
 		function(signtxt) {
 			//success call back
-			alert("success" + signtxt);
+			alert("success" + signtxt.retext);
 		},
 		function(errtxt) {
 			//fail call back
