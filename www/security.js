@@ -3,30 +3,30 @@ var exec = require("cordova/exec");
 module.exports = {
 	encrypt: function(txt) {
 		exec(
-		function() {
+		function(signtxt) {
 			//success call back
-			alert("success");
+			alert("success" + signtxt);
 		},
-		function() {
+		function(errtxt) {
 			//fail call back
 			alert("fail");
 		}, "Security", "encrypt", [txt]);
 	},
 	decrypt: function(txt) {
 		exec(
-		function() {
+		function(signtxt) {
 			//success call back
 		},
-		function() {
+		function(errtxt) {
 			//fail call back
 		}, "Security", "decrypt", [txt]);
 	},
 	md5: function(txt) {
 		exec(
-		function() {
+		function(signtxt) {
 			//success call back
 		},
-		function() {
+		function(errtxt) {
 			//fail call back
 		}, "Security", "md5", [txt]);
 	}
