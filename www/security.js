@@ -9,7 +9,7 @@ module.exports = {
 		},
 		function(errtxt) {
 			//fail call back
-			alert("fail");
+			alert("fail" + signtxt);
 		}, "Security", "encrypt", [txt]);
 	},
 	decrypt: function(txt) {
