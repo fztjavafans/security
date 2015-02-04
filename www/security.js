@@ -11,9 +11,9 @@ module.exports = {
 		exec(success, error, "Security", "md5", [txt]);
 	},
 	uuid: function(success, error, txt) {
-		exec(success, error, "Security", "uuid", [txt]);
+		exec(success, error, "Security", "uuid", null);
 	},
 	sysdate: function(success, error, txt) {
-		exec(success, error, "Security", "sysdate", [txt]);
+		exec(success, error, "Security", "sysdate", null);
 	}
 };
