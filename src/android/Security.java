@@ -28,8 +28,6 @@ public class Security extends CordovaPlugin {
 			ret = decrypt(text);
 		} else if ("md5".equals(action)) {
 			ret = MD5encrypt(text + MD5_KEY, CHARSET_UTF8);
-		} else {
-			return false;
 		}
 		
 		if(args != null && !"".equals(args)) {
