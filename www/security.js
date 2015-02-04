@@ -12,5 +12,8 @@ module.exports = {
 	},
 	uuid: function(success, error, txt) {
 		exec(success, error, "Security", "uuid", [txt]);
+	},
+	sysdate: function(success, error, txt) {
+		exec(success, error, "Security", "sysdate", [txt]);
 	}
 };
