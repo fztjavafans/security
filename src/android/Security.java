@@ -1,6 +1,7 @@
 package com.app.plugin.security;
 
 import java.security.MessageDigest;
+import java.util.UUID;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -28,6 +29,8 @@ public class Security extends CordovaPlugin {
 			ret = decrypt(text);
 		} else if ("md5".equals(action)) {
 			ret = MD5encrypt(text + MD5_KEY, CHARSET_UTF8);
+		} else if ("uuid".equals(action)) {
+			ret = uuid();
 		}
 		
 		if(args != null && !"".equals(args)) {
@@ -43,6 +46,10 @@ public class Security extends CordovaPlugin {
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 	    super.initialize(cordova, webView);
 	    // your init code here
+	}
+	
+	private static String uuid() {
+		return UUID.randomUUID().toString();
 	}
 	
 	private static String encrypt(String text) {
