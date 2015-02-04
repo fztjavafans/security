@@ -8,9 +8,6 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.util.Log;
 
 import com.zihexin.pay.model.common.ThreeDES;
 
@@ -23,25 +20,23 @@ public class Security extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args,
 			CallbackContext callbackContext) throws JSONException {
-		try {
-			JSONObject json = new JSONObject();
-			String ret = "";
-			String text = args.getString(0);
-			if ("encrypt".equals(action)) {
-				ret = encrypt(text);
-			} else if ("decrypt".equals(action)) {
-				ret = decrypt(text);
-			} else if ("md5".equals(action)) {
-				ret = MD5encrypt(text + MD5_KEY, CHARSET_UTF8);
-			} else {
-				return false;
-			}
-			
-			json.put("retext", ret);
+		String ret = "";
+		String text = args.getString(0);
+		if ("encrypt".equals(action)) {
+			ret = encrypt(text);
+		} else if ("decrypt".equals(action)) {
+			ret = decrypt(text);
+		} else if ("md5".equals(action)) {
+			ret = MD5encrypt(text + MD5_KEY, CHARSET_UTF8);
+		} else {
+			return false;
+		}
+		
+		if(args != null && !"".equals(args)) {
+			JSONArray json = new JSONArray();
+			json.put(ret);
 			callbackContext.success(json);
 			return true;
-		} catch (Exception ex) {
-			Log.e(action, "error", ex);
 		}
 		return false;
 	}
