@@ -9,7 +9,7 @@ module.exports = {
 		},
 		function(errtxt) {
 			//fail call back
-			alert("fail" + signtxt);
+			alert("fail" + errtxt);
 		}, "Security", "encrypt", [txt]);
 	},
 	decrypt: function(txt) {
@@ -20,7 +20,7 @@ module.exports = {
 		},
 		function(errtxt) {
 			//fail call back
-			alert("fail" + signtxt);
+			alert("fail" + errtxt);
 		}, "Security", "decrypt", [txt]);
 	},
 	md5: function(txt) {
@@ -31,7 +31,7 @@ module.exports = {
 		},
 		function(errtxt) {
 			//fail call back
-			alert("fail" + signtxt);
+			alert("fail" + errtxt);
 		}, "Security", "md5", [txt]);
 	}
 };
