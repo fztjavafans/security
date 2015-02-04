@@ -1,6 +1,8 @@
 package com.app.plugin.security;
 
 import java.security.MessageDigest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 import org.apache.cordova.CallbackContext;
@@ -17,6 +19,7 @@ public class Security extends CordovaPlugin {
 	private static final String DES_KEY = "12345678901234567890123456789012";
 	private static final String MD5_KEY = "12345678901234567890123456789012";
 	private static final String CHARSET_UTF8 = "UTF-8";
+	private static SimpleDateFormat SDF14 = new SimpleDateFormat("yyyyMMddHHmmss");
 	
 	@Override
 	public boolean execute(String action, JSONArray args,
@@ -31,6 +34,8 @@ public class Security extends CordovaPlugin {
 			ret = MD5encrypt(text + MD5_KEY, CHARSET_UTF8);
 		} else if ("uuid".equals(action)) {
 			ret = uuid();
+		} else if ("sysdate".equals(action)) {
+			ret = sysdate();
 		}
 		
 		if(args != null && !"".equals(args)) {
@@ -46,6 +51,10 @@ public class Security extends CordovaPlugin {
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 	    super.initialize(cordova, webView);
 	    // your init code here
+	}
+	
+	private static String sysdate() {
+		return SDF14.format(new Date());
 	}
 	
 	private static String uuid() {
