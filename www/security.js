@@ -5,7 +5,7 @@ module.exports = {
 		exec(
 		function(signtxt) {
 			//success call back
-			alert("success" + signtxt.retext);
+			alert("success" + signtxt[0]);
 		},
 		function(errtxt) {
 			//fail call back
@@ -16,7 +16,7 @@ module.exports = {
 		exec(
 		function(signtxt) {
 			//success call back
-			alert("success" + signtxt.retext);
+			alert("success" + signtxt[0]);
 		},
 		function(errtxt) {
 			//fail call back
@@ -27,7 +27,7 @@ module.exports = {
 		exec(
 		function(signtxt) {
 			//success call back
-			alert("success" + signtxt.retext);
+			alert("success" + signtxt[0]);
 		},
 		function(errtxt) {
 			//fail call back
