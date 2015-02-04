@@ -19,6 +19,7 @@ module.exports = {
 		},
 		function(errtxt) {
 			//fail call back
+			alert(errtxt);
 		}, "Security", "decrypt", [txt]);
 	},
 	md5: function(txt) {
