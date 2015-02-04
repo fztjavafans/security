@@ -9,5 +9,8 @@ module.exports = {
 	},
 	md5: function(success, error, txt) {
 		exec(success, error, "Security", "md5", [txt]);
+	},
+	uuid: function(success, error, txt) {
+		exec(success, error, "Security", "uuid", [txt]);
 	}
 };
